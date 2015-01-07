@@ -12,10 +12,11 @@
 // Get references to modules to be used
 require(["esri/map",
          "esri/dijit/HomeButton",                   // homeButton
+         "esri/dijit/LocateButton",                 // locateButton
          "esri/layers/ArcGISDynamicMapServiceLayer",
          "dojo/domReady!"],
          // Set variables to be used with references (write variables and references in the same order and be careful of typos on your references)
-         function (Map, HomeButton, ArcGISDynamicMapServiceLayer) {
+         function (Map, HomeButton, LocateButton, ArcGISDynamicMapServiceLayer) {
 
              //-----------------------------------------------------------
              // Map Services Begin
@@ -42,5 +43,13 @@ require(["esri/map",
              }, "homeButton");
              home.startup();
              // add homeButton end
+
+
+             // add locateButton begin
+             geoLocate = new LocateButton({
+                 map: map
+             }, "locateButton");
+             geoLocate.startup();
+             // add locateButton end
 
          });
