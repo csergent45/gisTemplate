@@ -12,10 +12,11 @@
 // Get references to modules to be used
 require(["esri/map",
          "esri/dijit/HomeButton",                   // homeButton
+         "esri/dijit/OverviewMap", // Overview Map
          "esri/layers/ArcGISDynamicMapServiceLayer",
          "dojo/domReady!"],
          // Set variables to be used with references (write variables and references in the same order and be careful of typos on your references)
-         function (Map, HomeButton, ArcGISDynamicMapServiceLayer) {
+         function (Map, HomeButton, OverviewMap, ArcGISDynamicMapServiceLayer) {
 
              //-----------------------------------------------------------
              // Map Services Begin
@@ -36,7 +37,7 @@ require(["esri/map",
              // Map Services End
              //-----------------------------------------------------------
 
-             // add homeButton begin
+             // add homeButton Begin
              var home = new HomeButton({
                  map: map,
                  highlightLocation: true,
@@ -44,7 +45,18 @@ require(["esri/map",
                  enableHighAccuracy: true
              }, "homeButton");
              home.startup();
-             // add homeButton end
+             // add homeButton End
 
-            
-         });
+
+             // overviewMap Begin
+             var overviewMapDijit = new OverviewMap({
+                map:map,
+                visible:false
+            });
+            overviewMapDijit.startup();
+             // overviewMap End
+
+
+        });
+
+        
