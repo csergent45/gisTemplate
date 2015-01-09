@@ -13,10 +13,11 @@
 require(["esri/map",
          "esri/dijit/HomeButton",                   // homeButton
          "esri/dijit/OverviewMap", // Overview Map
+         "esri/dijit/Scalebar",  // Scalebar
          "esri/layers/ArcGISDynamicMapServiceLayer",
          "dojo/domReady!"],
          // Set variables to be used with references (write variables and references in the same order and be careful of typos on your references)
-         function (Map, HomeButton, OverviewMap, ArcGISDynamicMapServiceLayer) {
+         function (Map, HomeButton, Scalebar, OverviewMap, ArcGISDynamicMapServiceLayer) {
 
              //-----------------------------------------------------------
              // Map Services Begin
@@ -54,7 +55,14 @@ require(["esri/map",
                 visible:false
             });
             overviewMapDijit.startup();
-             // overviewMap End
+            // overviewMap End
+
+            // scalebar Begin
+            var scalebar = new Scalebar({
+                map: map,
+                scalebarUnit: "dual"
+            });
+            // scalebar End
 
 
         });
