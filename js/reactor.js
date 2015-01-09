@@ -17,7 +17,7 @@ require(["esri/map",
          "esri/layers/ArcGISDynamicMapServiceLayer",
          "dojo/domReady!"],
          // Set variables to be used with references (write variables and references in the same order and be careful of typos on your references)
-         function (Map, HomeButton, Scalebar, OverviewMap, ArcGISDynamicMapServiceLayer) {
+         function (Map, HomeButton, OverviewMap, Scalebar, ArcGISDynamicMapServiceLayer) {
 
              //-----------------------------------------------------------
              // Map Services Begin
